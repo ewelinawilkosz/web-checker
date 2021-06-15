@@ -24,11 +24,9 @@ jobs:
         run: |
           chmod +x "${GITHUB_WORKSPACE}/check.sh"
           ${GITHUB_WORKSPACE}/check.sh
-          echo 'YEAR<<EOF' >> $GITHUB_ENV
-          ${GITHUB_WORKSPACE}/check.sh >> $GITHUB_ENV
-          echo 'EOF' >> $GITHUB_ENV
+          echo "VAX_YEAR=$(${GITHUB_WORKSPACE}/check.sh)" >> $GITHUB_ENV
           echo "test"
-          echo "${{ env.YEAR }}"
+          echo "${{ env.VAX_YEAR }}"
           
       - name: Send notification e-mail
         uses: wadeww/send-email-action@master
