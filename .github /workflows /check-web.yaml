@@ -25,15 +25,4 @@ jobs:
         run: |
           chmod +x "${GITHUB_WORKSPACE}/check.sh"
           "${GITHUB_WORKSPACE}/check.sh"
-      
-      - name: Send notification e-mail
-        uses: wadeww/send-email-action@master
-        with:
-          server_address: smtp.gmail.com
-          port: 465
-          username: ${{secrets.MAIL_USERNAME}}
-          password: ${{secrets.MAIL_PASSWORD}}
-          subject: Workflow finished
-          body: Job completed ${{job.status}}
-          to: ewelina.w@gmail.com
-          from: Me
+
