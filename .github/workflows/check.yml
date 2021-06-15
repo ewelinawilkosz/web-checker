@@ -28,8 +28,5 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a web checker
         run: |
-        # make file runnable, might not be necessary
-        chmod +x "${GITHUB_WORKSPACE}/check.sh"
-
-        # run script
-        "${GITHUB_WORKSPACE}/check.sh"
+          chmod +x "${GITHUB_WORKSPACE}/check.sh"
+          "${GITHUB_WORKSPACE}/check.sh"
