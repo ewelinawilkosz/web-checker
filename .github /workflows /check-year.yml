@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Check year
 
 # Controls when the action will run. 
 on:
@@ -34,7 +34,7 @@ jobs:
           chmod +x "${GITHUB_WORKSPACE}/check.sh"
           "${GITHUB_WORKSPACE}/check.sh"
       
-      - name: Send some mail
+      - name: Send notification e-mail
         uses: wadeww/send-email-action@master
         with:
           server_address: smtp.gmail.com
