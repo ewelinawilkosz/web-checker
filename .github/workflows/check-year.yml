@@ -29,7 +29,7 @@ jobs:
           echo $VAX_YEAR
           
       - name: Send notification e-mail
-        if: ${{env.VAX_YEAR}}=="1981"
+        if: ${{env.VAX_YEAR}}!="1982"
         uses: wadeww/send-email-action@master
         with:
           server_address: smtp.gmail.com
@@ -37,6 +37,6 @@ jobs:
           username: ${{secrets.MAIL_USERNAME}}
           password: ${{secrets.MAIL_PASSWORD}}
           subject: Workflow finished
-          body: Job completed ${{env.VAX_YEAR}}
+          body: Vaccinaction ${{env.VAX_YEAR}}
           to: ewelina.w@gmail.com
           from: Me
