@@ -29,7 +29,7 @@ jobs:
           echo $VAX_YEAR
           
       - name: Send notification e-mail
-        if: ${{ env.VAX_YEAR != '1982' }}
+        if: ${{ env.VAX_YEAR != '1981' }}
         uses: wadeww/send-email-action@master
         with:
           server_address: smtp.gmail.com
